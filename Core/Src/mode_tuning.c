@@ -10,7 +10,7 @@
 #include "global.h"
 #include "software_timer.h"
 
-char str[50];
+char str[100];
 
 void check_button_add_time()
 {

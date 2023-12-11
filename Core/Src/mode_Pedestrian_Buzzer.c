@@ -16,7 +16,7 @@ void resetBuzzer()
 
 void setBuzzer(int number)
 {
-	int value = 5 - number;
+	int value = 100 * (5 - number);
 
 	if (buzzer_flag == 1)
 	{

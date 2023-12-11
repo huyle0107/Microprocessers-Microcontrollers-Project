@@ -61,11 +61,11 @@ void auto_mode()
 			{
 				setTimer1(1000);
 
-				counter_led1--;
-				counter_led2--;
-
 				HAL_UART_Transmit(&huart2,(void*)str,sprintf(str, "Road 1: RED\r\nTime:%d\r\n", counter_led1), 1000);
 				HAL_UART_Transmit(&huart2,(void*)str,sprintf(str, "Road 2: GREEN\r\nTime:%d\r\n\r\n", counter_led2), 1000);
+
+				counter_led1--;
+				counter_led2--;
 			}
 
 			if (timer2_flag == 1)
@@ -98,11 +98,11 @@ void auto_mode()
 			{
 				setTimer1(1000);
 
-				counter_led1--;
-				counter_led2--;
-
 				HAL_UART_Transmit(&huart2,(void*)str,sprintf(str, "Road 1: RED\r\nTime:%d\r\n", counter_led1), 1000);
 				HAL_UART_Transmit(&huart2,(void*)str,sprintf(str, "Road 2: YELLOW\r\nTime:%d\r\n\r\n", counter_led2), 1000);
+
+				counter_led1--;
+				counter_led2--;
 			}
 
 			if (timer2_flag == 1)
@@ -136,11 +136,11 @@ void auto_mode()
 			{
 				setTimer1(1000);
 
-				counter_led1--;
-				counter_led2--;
-
 				HAL_UART_Transmit(&huart2,(void*)str,sprintf(str, "Road 1: GREEN\r\nTime:%d\r\n", counter_led1), 1000);
 				HAL_UART_Transmit(&huart2,(void*)str,sprintf(str, "Road 2: RED\r\nTime:%d\r\n\r\n", counter_led2), 1000);
+
+				counter_led1--;
+				counter_led2--;
 			}
 
 			if (timer2_flag == 1)
@@ -173,11 +173,11 @@ void auto_mode()
 			{
 				setTimer1(1000);
 
-				counter_led1--;
-				counter_led2--;
-
 				HAL_UART_Transmit(&huart2,(void*)str,sprintf(str, "Road 1: YELLOW\r\nTime:%d\r\n", counter_led1), 1000);
 				HAL_UART_Transmit(&huart2,(void*)str,sprintf(str, "Road 2: RED\r\nTime:%d\r\n\r\n", counter_led2), 1000);
+
+				counter_led1--;
+				counter_led2--;
 			}
 
 			if (timer2_flag == 1)

@@ -11,7 +11,7 @@
 #include "input_reading.h"
 #include "global.h"
 
-char str[50];
+char str[100];
 
 void manual_mode()
 {
@@ -28,17 +28,17 @@ void manual_mode()
 
 			if(timer1_flag == 1)
 			{
-				counter_led1--;
-				counter_led2--;
-
 				HAL_UART_Transmit(&huart2,(void*)str,sprintf(str, "MANUAL: RED\r\nTime:%d\r\n", counter_led1), 1000);
 				HAL_UART_Transmit(&huart2,(void*)str,sprintf(str, "MANUAL: GREEN\r\nTime:%d\r\n\r\n", counter_led2), 1000);
+
+				counter_led1--;
+				counter_led2--;
 
 				setTimer1(1000);
 			}
 
 			//Switch to M3 mode
-			if(timer2_flag == 1)
+			if(timer2_flag == 1 || counter_led1 == 0 || counter_led2 == 0)
 			{
 				HAL_GPIO_WritePin(LED_00_GPIO_Port, LED_00_Pin, RESET);
 				HAL_GPIO_WritePin(LED_01_GPIO_Port, LED_01_Pin, RESET);
@@ -76,17 +76,17 @@ void manual_mode()
 
 			if(timer1_flag == 1)
 			{
-				counter_led1--;
-				counter_led2--;
-
 				HAL_UART_Transmit(&huart2,(void*)str,sprintf(str, "MANUAL: GREEN\r\nTime:%d\r\n", counter_led1), 1000);
 				HAL_UART_Transmit(&huart2,(void*)str,sprintf(str, "MANUAL: RED\r\nTime:%d\r\n\r\n", counter_led2), 1000);
+
+				counter_led1--;
+				counter_led2--;
 
 				setTimer1(1000);
 			}
 
 			//Switch to M3 mode
-			if(timer2_flag == 1)
+			if(timer2_flag == 1 || counter_led1 == 0 || counter_led2 == 0)
 			{
 				HAL_GPIO_WritePin(LED_00_GPIO_Port, LED_00_Pin, RESET);
 				HAL_GPIO_WritePin(LED_01_GPIO_Port, LED_01_Pin, RESET);
